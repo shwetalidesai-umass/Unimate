@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+**/.env
+
+# Build outputs
+/build
+/dist
+client/build/
+
+# Mac system files
+.DS_Store
+**/.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage/
+**/coverage/
+playwright-report/
+test-results/
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# PostgreSQL
+*.sql.bak
+dump.sql
+
+# JWT secrets
+*.pem
+*.key
+*.cert
+
+# Package lock (optional — remove this line if you want to keep it)
+# package-lock.json
+
+# Load test output (raw results — don't commit these)
+load-tests/results.json
+load-tests/*.json
+server/load_tests/results.json
+server/load_tests/*.json

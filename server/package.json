@@ -1,0 +1,31 @@
+{
+  "name": "unimate-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "UniMate API — Node.js + Express + PostgreSQL",
+  "main": "server.js",
+  "scripts": {
+    "dev":     "node --watch server.js",
+    "start":   "node server.js",
+    "test":    "NODE_ENV=test jest",
+    "migrate": "psql -U $DB_USER -d $DB_NAME -f migrations/001_initial_schema.sql",
+    "seed:collab-members": "node scripts/seed-collab-members.mjs"
+  },
+  "dependencies": {
+    "cookie-parser":      "^1.4.7",
+    "cors":               "^2.8.5",
+    "dotenv":             "^16.4.5",
+    "express":            "^4.19.2",
+    "google-auth-library": "^9.11.0",
+    "jsonwebtoken":       "^9.0.2",
+    "pg":                 "^8.11.5"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0",
+    "nodemon": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

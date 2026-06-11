@@ -1,0 +1,41 @@
+{
+  "name": "unimate-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
+    "@testing-library/user-event": "^14.6.1",
+    "axios": "^1.6.0",
+    "jest-axe": "^10.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.0",
+    "axios": "^1.6.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
+    "react-scripts": "5.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "test:usability-report": "CI=true JEST_HTML_REPORTERS_PUBLIC_PATH=./test-results JEST_HTML_REPORTERS_FILE_NAME=usability-report.html JEST_HTML_REPORTERS_EXPAND=true JEST_HTML_REPORTERS_PAGE_TITLE='Unimate usability (a11y)' react-scripts test --watchAll=false --testPathPattern=usability.a11y.test --reporters=default --reporters=jest-html-reporters"
+  },
+  "proxy": "http://localhost:4000",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "jest-html-reporters": "^3.1.7"
+  }
+}

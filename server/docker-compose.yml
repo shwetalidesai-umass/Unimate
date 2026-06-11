@@ -1,0 +1,19 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: unimate
+      POSTGRES_PASSWORD: unimate
+      POSTGRES_DB: unimate
+    ports:
+      - "5433:5432"
+    # Must match server/src/routes/auth.js (users.full_name, onboarding_done, refresh_tokens, …).
+    # If you still see login?error=server_error after OAuth, recreate the volume: docker compose down -v && docker compose up -d
+    volumes:
+      - ./001_initial_schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - ./db/add_collab_chat_columns.sql:/docker-entrypoint-initdb.d/02-collab-chat.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U unimate -d unimate"]
+      interval: 3s
+      timeout: 5s
+      retries: 5
