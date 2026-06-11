@@ -85,7 +85,7 @@ const mockPosts = [
 beforeEach(() => {
   useAuth.mockReturnValue({
     token: 'fake-token',
-    user: { full_name: 'Aryan Jaggi', email: 'ajaggi@umass.edu' },
+    user: { full_name: 'Alex Student', email: 'student@umass.edu' },
     logout: jest.fn(),
   });
   axios.get.mockImplementation((url) => {

@@ -38,6 +38,9 @@ npm test
 # Run all tests once with coverage
 CI=true npm test -- --watchAll=false --forceExit --coverage
 
+# Accessibility smoke tests with HTML report
+npm run test:usability-report
+
 # Generate HTML test report
 CI=true npm test -- --watchAll=false --forceExit --reporters=default --reporters=jest-html-reporters
 open jest_html_reporters.html
@@ -45,6 +48,8 @@ open jest_html_reporters.html
 # Open coverage report in browser
 open coverage/lcov-report/index.html
 ```
+
+Playwright end-to-end tests live at the repository root — see the root [`README.md`](../README.md) for `npm run test:e2e`.
 
 ## Test Results
 - 15 test suites, 198 tests, 0 failures

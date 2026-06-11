@@ -24,8 +24,8 @@ jest.mock('../apiUrl', () => ({
 import { useAuth } from '../context/AuthContext';
 
 const mockProfile = {
-  full_name: 'Aryan Jaggi',
-  email: 'ajaggi@umass.edu',
+  full_name: 'Alex Student',
+  email: 'student@umass.edu',
   school: 'umass',
   class_year: 2026,
   major: 'Computer Science',
@@ -38,7 +38,7 @@ const mockProfile = {
 
 beforeEach(() => {
   useAuth.mockReturnValue({
-    user: { full_name: 'Aryan Jaggi' },
+    user: { full_name: 'Alex Student' },
     token: 'fake-token',
     logout: jest.fn(),
   });
@@ -71,14 +71,14 @@ describe('ProfilePage', () => {
   it('renders full name after fetch', async () => {
     renderProfilePage();
     await waitFor(() => {
-      expect(screen.getAllByText('Aryan Jaggi').length).toBeGreaterThan(0);
+      expect(screen.getAllByText('Alex Student').length).toBeGreaterThan(0);
     });
   });
 
   it('renders email after fetch', async () => {
     renderProfilePage();
     await waitFor(() => {
-      expect(screen.getByText('ajaggi@umass.edu')).toBeInTheDocument();
+      expect(screen.getByText('student@umass.edu')).toBeInTheDocument();
     });
   });
 

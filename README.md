@@ -1,25 +1,16 @@
 # UniMate
-A collaboration platform for the Five College community.
 
-**Course:** COMPSCI 520 – Spring 2026  
-**Instructor:** Heather Conboy  
-**University:** University of Massachusetts Amherst  
+A collaboration platform for the Five College community — originally developed as a COMPSCI 520 (Software Engineering) course project at UMass Amherst.
 
-## Team Members
-- Aryan Jaggi — https://github.com/Ajaggi24
-- Dev Pathak — https://github.com/devpathak0212
-- Dhruv Kalra — https://github.com/Vipdhruvkalra
-- Pooja Vyas — https://github.com/vyas2230
-- Shwetali Desai — https://github.com/Shwetali-desai
-
-## Repository
-- Project Repository: https://github.com/Ajaggi24/Unimate
-- Project Documents: https://drive.google.com/drive/u/3/folders/1G9MiXc2fWx20HyRs0LBxll8nTyuP33m0
+**Author:** [Shwetali Desai](https://github.com/shwetalidesai-umass)  
+**Repository:** https://github.com/shwetalidesai-umass/UniMate
 
 ## Overview
+
 UniMate is a full-stack web platform for students across the Five College community. It unifies collaboration matching, academic Q&A, and course/professor reviews into a single course-centered hub serving UMass Amherst, Amherst College, Hampshire College, Mount Holyoke College, and Smith College.
 
 ## Features
+
 - **Google SSO Authentication** — University email login with Five College domain validation
 - **Collaboration Matching** — Create and join posts for projects, study groups, homework, and exams
 - **Discussion Boards** — Course-specific Q&A with upvoting and inline answers
@@ -29,6 +20,7 @@ UniMate is a full-stack web platform for students across the Five College commun
 - **Search** — Full-text search across posts, discussions, and reviews
 
 ## Architecture
+
 Three-tier client-server architecture:
 
 - **Frontend:** React SPA (React Router, Axios, AuthContext for JWT state)
@@ -36,6 +28,7 @@ Three-tier client-server architecture:
 - **Database:** PostgreSQL (ACID-compliant, 12 tables, UUID primary keys)
 
 ## Tech Stack
+
 | Layer | Technology |
 |---|---|
 | Frontend | React.js, React Router, Axios |
@@ -48,6 +41,7 @@ Three-tier client-server architecture:
 | Accessibility | jest-axe, Google Lighthouse |
 
 ## Test Results
+
 - 198 tests passing across 15 test suites, 0 failures
 - 80.23% statement coverage, 82.45% line coverage (Istanbul/lcov)
 - 11 Playwright E2E tests, all passed in 7.8s
@@ -55,9 +49,11 @@ Three-tier client-server architecture:
 - Lighthouse accessibility scores: 90–96 across all 6 pages
 
 ## Data Model
+
 12 tables: `users`, `courses`, `collab_posts`, `collab_members`, `questions`, `answers`, `reviews`, `professors`, `professor_courses`, `user_courses`, `activity_feed`, `refresh_tokens`.
 
 ## Project Structure
+
 ```
 Unimate/
 ├── client/                  # React SPA
@@ -68,4 +64,13 @@ Unimate/
 ```
 
 ## Quick Start
-See [`client/README.md`](./client/README.md) for frontend setup and [`server/README.md`](./server/README.md) for backend setup.
+
+See [`client/README.md`](./client/README.md) for frontend setup and [`server/Readme.md`](./server/Readme.md) for backend setup.
+
+### Running E2E Tests
+
+From the repository root (requires Docker for PostgreSQL):
+
+```bash
+npm run test:e2e
+```

@@ -5,7 +5,7 @@
  * Ramps up to 100 virtual users over 5 minutes.
  *
  * ⚠️  Only run after smoke_test and load_test both pass.
- * ⚠️  Don't run against production without team agreement.
+ * ⚠️  Don't run against production without explicit permission.
  *
  * HOW TO RUN:
  *   k6 run server/load_tests/stress_test.js

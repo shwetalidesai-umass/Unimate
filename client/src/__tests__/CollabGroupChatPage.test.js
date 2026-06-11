@@ -32,8 +32,8 @@ const mockPayload = {
     chat_link: null,
   },
   members: [
-    { user_id: 'u1', full_name: 'Aryan Jaggi', email: 'ajaggi@umass.edu' },
-    { user_id: 'u2', full_name: 'Pooja Vyas', email: 'pvyas@umass.edu' },
+    { user_id: 'u1', full_name: 'Jordan Kim', email: 'jordan.kim@umass.edu' },
+    { user_id: 'u2', full_name: 'Sam Rivera', email: 'sam.rivera@umass.edu' },
   ],
 };
 
@@ -87,16 +87,16 @@ describe('CollabGroupChatPage', () => {
   it('shows members list', async () => {
     renderPage();
     await waitFor(() => {
-      expect(screen.getByText('Aryan Jaggi')).toBeInTheDocument();
-      expect(screen.getByText('Pooja Vyas')).toBeInTheDocument();
+      expect(screen.getByText('Jordan Kim')).toBeInTheDocument();
+      expect(screen.getByText('Sam Rivera')).toBeInTheDocument();
     });
   });
 
   it('shows member emails', async () => {
     renderPage();
     await waitFor(() => {
-      expect(screen.getByText('ajaggi@umass.edu')).toBeInTheDocument();
-      expect(screen.getByText('pvyas@umass.edu')).toBeInTheDocument();
+      expect(screen.getByText('jordan.kim@umass.edu')).toBeInTheDocument();
+      expect(screen.getByText('sam.rivera@umass.edu')).toBeInTheDocument();
     });
   });
 
